@@ -7,7 +7,7 @@ function App() {
   const [feedbacks, setFeedbacks] = useState([]);
 
   useEffect(() => {
-    fetch("https://feedback-backend-rezm.onrender.com/api/feedback") // Update this with your backend URL
+    fetch(`${process.env.REACT_APP_API_URL}`)
       .then((res) => res.json())
       .then((data) => setFeedbacks(data));
   }, []);
